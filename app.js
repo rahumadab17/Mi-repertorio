@@ -21,7 +21,7 @@ app.post("/cancion", async (req, res) => {
         res.json(result);
     } catch (error) {
         const { code } = error;
-        console.log(`No se pudo insertar la canción debido al error N°: ${code}`);
+        console.log(chalk.redBright.bold(`No se pudo insertar la canción debido al error N°: ${code}`));
         console.log(error);
     }
 });
@@ -32,7 +32,7 @@ app.get("/canciones", async (req, res) => {
         res.json(obtenerCanciones);
     } catch (error) {
         const { code } = error;
-        console.log(`No se pudo encontrar las canciones debido al error N°: ${code}`);
+        console.log(chalk.redBright.bold(`No se pudo encontrar las canciones debido al error N°: ${code}`));
     }
 });
 
@@ -45,7 +45,7 @@ app.put("/cancion", async (req, res) => {
         res.json(result);
     } catch (error) {
         const { code } = error;
-        console.log(`No se pudo actualizar la canción debido al error N°: ${code}`);
+        console.log(chalk.redBright.bold(`No se pudo actualizar la canción debido al error N°: ${code}`));
     }
 });
 
@@ -56,6 +56,6 @@ app.delete("/cancion", async (req, res) => {
         res.json(result)
     } catch (error) {
         const { code } = error;
-        console.log(`No se pudo eliminar la canción debido al error N°: ${code}`);
+        console.log(chalk.redBright.bold(`No se pudo eliminar la canción debido al error N°: ${code}`));
     }
 });
